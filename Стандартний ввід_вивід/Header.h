@@ -17,6 +17,7 @@ struct Stack
 	Stack *next;
 };
 
+//qwe
 
 void push(char * info, Stack *& myStack);
 
