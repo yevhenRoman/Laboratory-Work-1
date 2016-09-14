@@ -1,7 +1,7 @@
 #include "Header.h"
 
 
-
+//Функція вводу в стек інфо
 void push(char*info, Stack *&myStack)
 {
 	Stack *temp = new Stack;
@@ -10,6 +10,7 @@ void push(char*info, Stack *&myStack)
 	myStack = temp;
 }
 
+//Звільнення стеку
 char* pop(Stack *&myStack)
 {
 	if (myStack == NULL)
@@ -24,19 +25,21 @@ char* pop(Stack *&myStack)
 	return arr;
 }
 
-void printStek(Stack *&myStack)
-{
-	Stack *p = myStack;
-	while (p != NULL)
-	{
-		for (int i = 0; i < strlen(p->data); ++i)
-		{
-			printf("%c", p->data[i]);
-		}
-		p = p->next;	
-	}
-}
+//Вивід стеку
+//void printStek(Stack *&myStack)
+//{
+//	Stack *p = myStack;
+//	while (p != NULL)
+//	{
+//		for (int i = 0; i < strlen(p->data); ++i)
+//		{
+//			printf("%c", p->data[i]);
+//		}
+//		p = p->next;	
+//	}
+//}
 
+//Запис з файлу в стек
 void LoadFileToStek(FILE*f, Stack *&myStack)
 {
 	myStack = NULL;
@@ -61,8 +64,11 @@ void LoadFileToStek(FILE*f, Stack *&myStack)
 
 	char *temp = pop(myStack);//Видаляємо в останній стрічці '\n'
 
+	renumber(myStack);
+
 }
 
+//Функція форматування стрічок в стеку
 void renumber(Stack *&myStack)
 {
 	int i = 1;
@@ -91,6 +97,7 @@ void renumber(Stack *&myStack)
 	}
 }
 
+//Функція звільнення стеку і одару виводу
 void purge(Stack *&myStack)
 {
 	while (myStack != NULL)
@@ -101,6 +108,7 @@ void purge(Stack *&myStack)
 	delete[]myStack;
 }
 
+//Функція заголовку
 void header()
 {
 	cout << "\t  ***Laboratory work #1***" << endl;
@@ -112,6 +120,7 @@ void header()
 
 }
 
+//Функція лінії
 void line(int n, char c)
 {
 	for (size_t i = 0; i < n; i++)

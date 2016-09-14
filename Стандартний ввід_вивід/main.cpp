@@ -11,15 +11,11 @@ void main()
 
 	LoadFileToStek(f, myStack);
 
-	cout << "PrintStek: " << endl;
+	//cout << "PrintStek: " << endl;
 
-	printStek(myStack);
-
-	renumber(myStack);
+	/*printStek(myStack);*/
 
 	line(50, '-');
-
-	
 	
 	cout << "Purge: " << endl;
 
